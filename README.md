@@ -3,10 +3,10 @@ Official Repository for our ACL paper : Two Intermediate Translations Are Better
 
 https://arxiv.org/abs/2504.05614
 
-Our checkpoints and datasets are available in https://drive.google.com/drive/folders/1TmcKEdIN6-bGdVY6PaoUQxFMgk22H8-v?usp=sharing
+Our checkpoints and datasets are available in [https://drive.google.com/drive/folders/1TmcKEdIN6-bGdVY6PaoUQxFMgk22H8-v?usp=sharing](https://drive.google.com/drive/folders/1TmcKEdIN6-bGdVY6PaoUQxFMgk22H8-v?usp=sharing)
 
 # Installation
-Download official LLaMA-Factory https://github.com/hiyouga/LlamaFactory/tree/v0.8.2 .
+Download official LLaMA-Factory [https://github.com/hiyouga/LlamaFactory/tree/v0.8.2](https://github.com/hiyouga/LlamaFactory/tree/v0.8.2) .
 
 Then, download 'LLaMA-Factory for training' and replace the folders and files in the official repo. 
 
@@ -22,7 +22,7 @@ Then, you can run scripts here for training.
 llamafactory-cli train config.yaml
 ```
 
-```
+```yaml
 ### config.yaml
 model_name_or_path: /path/to/your/llama3-8b-Instruct
 adapter_name_or_path: /path/to/your/checkpoint
@@ -65,9 +65,9 @@ fp16: true
 remove_unused_columns: false 
 ```
 
-### Test
+# Test
 You can use official LLaMA-Factory repo (with files not replaced). You can also use other repos (e.g. ms-swift) for inference. You can directly use the checkpoints in our Google Drive.
-```
+```bash
 python src/train_bash.py \
     --stage sft \
     --model_name_or_path /path/to/your/llama3-8b-Instruct \
@@ -86,4 +86,31 @@ python src/train_bash.py \
     --do_sample False \
 
 ```
+# Metrics
+For LTCR, please follow [Encouraging Lexical Translation Consistency for Document-Level Neural Machine Translation](https://aclanthology.org/2021.emnlp-main.262/)
+For BlonDe, please follow [https://github.com/opera7133/Blonde](https://github.com/opera7133/Blonde)
+For ALTI, please follow [https://github.com/facebookresearch/stopes](https://github.com/facebookresearch/stopes) and run alti.py
+For Coh, please run metrics/coh.py
+For PPL, please run metrics/ppl.py
 
+# Cite
+```bib
+@inproceedings{dong-etal-2025-two,
+    title = "Two Intermediate Translations Are Better Than One: Fine-tuning {LLM}s for Document-level Translation Refinement",
+    author = "Dong, Yichen  and
+      Lyu, Xinglin  and
+      Li, Junhui  and
+      Wei, Daimeng  and
+      Zhang, Min  and
+      Tao, Shimin  and
+      Yang, Hao",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-long.726/",
+    doi = "10.18653/v1/2025.acl-long.726",
+    pages = "14917--14933",
+    ISBN = "979-8-89176-251-0",
+```
