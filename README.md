@@ -84,7 +84,6 @@ python src/train_bash.py \
     --max_new_tokens 4096 \
     --num_beams 1 \
     --do_sample False \
-    >log/sentence_test_base.log
 
 ```
 
