@@ -90,9 +90,13 @@ python src/train_bash.py \
 ```
 # Metrics
 For LTCR, please follow [Encouraging Lexical Translation Consistency for Document-Level Neural Machine Translation](https://aclanthology.org/2021.emnlp-main.262/)
+
 For BlonDe, please follow [https://github.com/opera7133/Blonde](https://github.com/opera7133/Blonde)
+
 For ALTI, please follow [https://github.com/facebookresearch/stopes](https://github.com/facebookresearch/stopes) and run alti.py
+
 For Coh, please run metrics/coh.py
+
 For PPL, please run metrics/ppl.py
 
 # Cite
