@@ -2,6 +2,7 @@
 Official Repository for our ACL paper : Two Intermediate Translations Are Better Than One: Fine-tuning LLMs for Document-level Translation Refinement.
 
 https://arxiv.org/abs/2504.05614
+https://aclanthology.org/2025.acl-long.726/
 
 Our checkpoints and datasets are available in [https://drive.google.com/drive/folders/1TmcKEdIN6-bGdVY6PaoUQxFMgk22H8-v?usp=sharing](https://drive.google.com/drive/folders/1TmcKEdIN6-bGdVY6PaoUQxFMgk22H8-v?usp=sharing)
 
