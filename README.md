@@ -67,7 +67,7 @@ remove_unused_columns: false
 
 # Test
 You can use official LLaMA-Factory repo (with files not replaced). You can also use other repos (e.g. ms-swift) for inference. You can directly use the checkpoints in our Google Drive.
-```bash
+```sh
 python src/train_bash.py \
     --stage sft \
     --model_name_or_path /path/to/your/llama3-8b-Instruct \
@@ -113,4 +113,5 @@ For PPL, please run metrics/ppl.py
     doi = "10.18653/v1/2025.acl-long.726",
     pages = "14917--14933",
     ISBN = "979-8-89176-251-0",
+}
 ```
