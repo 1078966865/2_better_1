@@ -7,6 +7,7 @@ Our checkpoints and datasets are available in https://drive.google.com/drive/fol
 
 # Installation
 Download official LLaMA-Factory https://github.com/hiyouga/LlamaFactory/tree/v0.8.2 .
+
 Then, download 'LLaMA-Factory for training' and replace the folders and files in the official repo. 
 
 ```
@@ -53,12 +54,37 @@ overwrite_output_dir: false
 
 ### train
 per_device_train_batch_size: 2
-gradient_accumulation_steps: 16
+gradient_accumulation_steps: 8
 learning_rate: 0.0001
 num_train_epochs: 1
 lr_scheduler_type: cosine
 warmup_ratio: 0.1
 fp16: true
-remove_unused_columns: false
+
+###IMPORTANT!!!
+remove_unused_columns: false 
+```
+
+### Test
+You can use official LLaMA-Factory repo (with files not replaced). You can also use other repos (e.g. ms-swift) for inference. You can directly use the checkpoints in our Google Drive.
+```
+python src/train_bash.py \
+    --stage sft \
+    --model_name_or_path /path/to/your/llama3-8b-Instruct \
+    --adapter_name_or_path /path/to/your/checkpoint(or our checkpoints)/ \
+    --do_predict \
+    --dataset /path/to/datasets/with/our/prompts \
+    --template llama3 \
+    --finetuning_type lora \
+    --output_dir path/to/predict/result/ \
+    --predict_with_generate \
+    --per_device_eval_batch_size 1 \
+    --fp16 \
+    --cutoff_len 4096 \
+    --max_new_tokens 4096 \
+    --num_beams 1 \
+    --do_sample False \
+    >log/sentence_test_base.log
 
 ```
+
